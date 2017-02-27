@@ -1088,7 +1088,7 @@ def dispatch_stat(result, name, key, dimensions=None):
                                                  for d in dimensions.items()]))
 
     val.type = estype
-    val.type_instance = name
+    val.type_instance = name.replace(".", "-")
     val.values = [value]
     val.meta = {'0': True}
     log.info('Emitting value: %s' % val)
